@@ -1,0 +1,25 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-escritorio-moderno-vector-diseno-azul-geometrico_53876-135923.jpg?w=1380&t=st=1727414848~exp=1727415448~hmac=b19cecad715028d7bfdd793f67d3cc15815a88dafbf055c2a479b73bceae8ada');
+}
+#titulo1{
+    text-align: center;color:white;
+}
+.resultado{
+    margin: 20px auto;
+    padding: 10px;
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-escritorio-moderno-vector-diseno-azul-geometrico_53876-135923.jpg?w=1380&t=st=1727414848~exp=1727415448~hmac=b19cecad715028d7bfdd793f67d3cc15815a88dafbf055c2a479b73bceae8ada');
+    border: 2px solid#ccc;
+    width: 300px;
+    text-align: center;
+    color: white;
+}
+#entrada1,#entrada2{color: maroon;font-size: 1,6em;}
+form{margin: auto;text-align: center;}
+
+#resultado{
+    color: white;
+    font-size: 1.6em;
+    margin: auto;
+    text-align: center;
+}

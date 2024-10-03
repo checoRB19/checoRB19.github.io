@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora avanzada</title>
+    <link rel="stylesheet" href="hola.css">
+</head>
+<body>
+    <h1 id="titulo1">Calculadora avanzada</h1>
+    <div class="resultado">
+        <ul>
+            <li>Pulse 1 para sumar</li>
+            <li>Pulse 2 para restar</li>
+            <li>Pulse 3 para multiplicar</li>
+            <li>Pulse 4 para dividir</li>
+            <li>Pulse 5 para obtener módulo</li>
+            <li>Pulse 6 para seno</li>
+            <li>Pulse 7 para coseno</li>
+            <li>Pulse 8 para potencia</li>
+            <li>Pulse 9 para raíz cuadrada</li>
+            <li>Pulse 10 para valor absoluto</li>
+            <li>Pulse 11 para salir</li>
+        </ul>
+    </div>   
+    <div id="entrada1" style="color:red;font-size: 1.6em;"></div>
+    <div id="entrada2" style="color:red;font-size: 1.6em;"></div>
+    <div id="resultado" style="color: white;font-size: 1.6em;margin: auto;text-align: center;">
+ 
+        Pulsa para realizar operación
+    </div>
+    <form style="margin: auto;text-align: center;">
+        <input type="button" value="Operación" onclick="operacion();"/>
+    </form>
+    <script>
+        function operacion() {
+            const x = Number(prompt("Sr. usuario, introduce una opción"));
+            const w = document.getElementById('resultado');
+            let input1, input2;
+            switch (x) {
+                case 1:
+                    input1 = Number(prompt("Introduce el primer valor"));
+                    input2 = Number(prompt("Introduce el segundo valor"));
+                    w.innerHTML = input1 + input2;
+                    break;
+                case 2:
+                    input1 = Number(prompt("Introduce el primer valor"));
+                    input2 = Number(prompt("Introduce el segundo valor"));
+                    w.innerHTML = input1 - input2;
+                    break;
+                case 3:
+                    input1 = Number(prompt("Introduce el primer valor"));
+                    input2 = Number(prompt("Introduce el segundo valor"));
+                    w.innerHTML = input1 * input2;
+                    break;
+                case 4:
+                    input1 = Number(prompt("Introduce el primer valor"));
+                    input2 = Number(prompt("Introduce el segundo valor"));
+                    w.innerHTML = input1 / input2;
+                    break;
+                case 5:
+                    input1 = Number(prompt("Introduce el primer valor"));
+                    input2 = Number(prompt("Introduce el segundo valor"));
+                    w.innerHTML = input1 % input2;
+                    break;
+                case 6:
+                    input1 = Number(prompt("Introduce un valor"));
+                    w.innerHTML = Math.sin(input1);
+                    break;
+                case 7:
+                    input1 = Number(prompt("Introduce un valor"));
+                    w.innerHTML = Math.cos(input1);
+                    break;
+                case 8:
+                    input1 = Number(prompt("Introduce la base"));
+                    input2 = Number(prompt("Introduce el exponente"));
+                    w.innerHTML = Math.pow(input1, input2);
+                    break;
+                case 9:
+                    input1 = Number(prompt("Introduce un valor"));
+                    w.innerHTML = Math.sqrt(input1);
+                    break;
+                case 10:
+                    input1 = Number(prompt("Introduce un valor"));
+                    w.innerHTML = Math.abs(input1);
+                    break;
+                case 11:
+                    document.body.innerHTML = "Se ha salido";
+                    break;
+                default:
+                    w.innerHTML = "Opción no válida";
+            }
+        }
+
+    </script>
+</body>
+</html>

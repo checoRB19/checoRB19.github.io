@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://img.freepik.com/vector-gratis/fondo-escritorio-moderno-vector-diseno-azul-geometrico_53876-135923.jpg?w=1380&t=st=1727414848~exp=1727415448~hmac=b19cecad715028d7bfdd793f67d3cc15815a88dafbf055c2a479b73bceae8ada');
+        }
+        #calendar-container {
+            display: block;
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            color: white;
+        }
+        #calendar-container h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        #calendar-container div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        #calendar-container button {
+            padding: 5px 10px;
+            border: none;
+            background-color: white;
+            color: black;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #calendar-container button:hover {
+            background-color: white;
+        }
+        #calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #calendar-table th, #calendar-table td {
+            width: 14.28%;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        #calendar-table th {
+            background-color: white;
+            color: black;
+        }
+        #calendar-table td {
+            background-color: transparent;
+        }
+        #calendar-table td:hover {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="calendar-container">
+        <h2>Calendario</h2>
+        <div>
+            <button onclick="changeMonth(-1)">Anterior</button>
+            <span id="monthYear"></span>
+            <button onclick="changeMonth(1)">Siguiente</button>
+            <button onclick="exitPage()">Volver</button>
+        </div>
+        <table id="calendar-table">
+            <thead>
+                <tr>
+                    <th>Dom</th>
+                    <th>Lun</th>
+                    <th>Mar</th>
+                    <th>Mié</th>
+                    <th>Jue</th>
+                    <th>Vie</th>
+                    <th>Sáb</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se insertará el calendario dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+
+        function changeMonth(delta) {
+            currentMonth += delta;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            } else if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+
+        function generateCalendar(month, year) {
+            const date = new Date(year, month, 1);
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDay = date.getDay();
+            const monthYear = document.getElementById('monthYear');
+
+            monthYear.textContent = date.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
+
+            const calendarBody = document.querySelector('#calendar-table tbody');
+            calendarBody.innerHTML = '';
+
+            let row = document.createElement('tr');
+            let cell;
+
+            for (let i = 0; i < firstDay; i++) {
+                cell = document.createElement('td');
+                row.appendChild(cell);
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                if (row.children.length === 7) {
+                    calendarBody.appendChild(row);
+                    row = document.createElement('tr');
+                }
+                cell = document.createElement('td');
+                cell.textContent = day;
+                row.appendChild(cell);
+            }
+
+            if (row.children.length > 0) {
+                calendarBody.appendChild(row);
+            }
+        }
+
+        function exitPage() {
+            window.location.href = 'menudeisrael.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            generateCalendar(currentMonth, currentYear);
+        });
+    </script>
+</body>
+</html>

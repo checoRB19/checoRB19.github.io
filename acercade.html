@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Documento</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://img.freepik.com/vector-gratis/fondo-escritorio-moderno-vector-diseno-azul-geometrico_53876-135923.jpg?w=1380&t=st=1727414848~exp=1727415448~hmac=b19cecad715028d7bfdd793f67d3cc15815a88dafbf055c2a479b73bceae8ada');
+        }
+        .info-container {
+            background-image: url('https://img.freepik.com/vector-gratis/fondo-escritorio-moderno-vector-diseno-azul-geometrico_53876-135923.jpg?w=1380&t=st=1727414848~exp=1727415448~hmac=b19cecad715028d7bfdd793f67d3cc15815a88dafbf055c2a479b73bceae8ada');
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: white;
+        }
+        .info-container h1 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+        }
+        .info-container p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+        .info-container button {
+            padding: 10px 20px;
+            border: none;
+            background-white;
+            color: black;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .info-container button:hover {
+            background-color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="info-container">
+        <h1>Acerca de</h1>
+        <p><strong>Autor:</strong> Israel Martínez de Gyves 5K</p>
+        <p><strong>Lugar:</strong> Juchitán de Zaragoza</p>
+        <p><strong>Fecha:</strong> 3 Octubre 2024</p>
+        <p><strong>Versión:</strong> HTML 5</p>
+        <button onclick="exitPage()">Volver</button>
+    </div>
+
+    <script>
+        function exitPage() {
+            window.location.href = 'menudeisrael.html';
+        }
+    </script>
+</body>
+</html>

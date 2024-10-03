@@ -1,0 +1,65 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+background-image: url('https://img.freepik.com/vector-gratis/fondo-escritorio-moderno-vector-diseno-azul-geometrico_53876-135923.jpg?w=1380&t=st=1727414848~exp=1727415448~hmac=b19cecad715028d7bfdd793f67d3cc15815a88dafbf055c2a479b73bceae8ada');
+
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: transparent;
+    padding: 10px;
+
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+   background-color: transparent;
+}
+
+.menu > li {
+    position: relative;
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+.menu a:hover {
+    background-color: transparent;
+}
+
+.submenu:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.dropdown li {
+    width: 150px;
+}
+
+.dropdown a {
+    padding: 10px;
+}
+
+.dropdown a:hover {
+    background-color: transparent;
+}

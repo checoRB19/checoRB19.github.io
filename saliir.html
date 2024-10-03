@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Salida</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://img.freepik.com/vector-gratis/fondo-escritorio-moderno-vector-diseno-azul-geometrico_53876-135923.jpg?w=1380&t=st=1727414848~exp=1727415448~hmac=b19cecad715028d7bfdd793f67d3cc15815a88dafbf055c2a479b73bceae8ada');
+        }
+        .confirm-container {
+            background-image: url('https://img.freepik.com/vector-gratis/fondo-escritorio-moderno-vector-diseno-azul-geometrico_53876-135923.jpg?w=1380&t=st=1727414848~exp=1727415448~hmac=b19cecad715028d7bfdd793f67d3cc15815a88dafbf055c2a479b73bceae8ada');
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color:white;
+        }
+        .confirm-container h1 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+        }
+        .confirm-container p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+        .confirm-container button {
+            padding: 10px 20px;
+            border: none;
+            background-color:white;
+            color:black;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .confirm-container button:hover {
+            background-color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirm-container">
+        <h1>Confirmación de Salida</h1>
+        <p>¿Estás seguro de que deseas salir?</p>
+        <button onclick="confirmExit(true)">Sí</button>
+        <button onclick="confirmExit(false)">No</button>
+    </div>
+
+    <script>
+        function confirmExit(isConfirmed) {
+            if (isConfirmed) {
+                window.location.href = 'https://www.google.com';
+            } else {
+                window.location.href = 'menudeisrael.html';
+            }
+        }
+    </script>
+</body>
+</html>
